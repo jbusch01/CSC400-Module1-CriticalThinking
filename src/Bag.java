@@ -13,7 +13,7 @@ public class Bag<T> {
         items.put(item, items.getOrDefault(item, 0) + 1);
     }
 
-    // Removes one occurrence off the item, if it exists
+    // Removes one occurrence of the item, if it exists
     public void remove(T item) {
         if (items.containsKey(item)) {
             int count = items.get(item);
@@ -30,10 +30,12 @@ public class Bag<T> {
         return items.containsKey(item);
     }
 
+    // Counts the number of each item and displays as integer
     public int count(T item) {
         return items.getOrDefault(item, 0);
     }
 
+    // Output method formatting for displaying inventory contents
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
