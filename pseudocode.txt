@@ -1,0 +1,30 @@
+CLASS Bag <T>
+    PRIVATE MAP<<T, Integer> items
+
+    METHOD add(item: T)
+        if item EXISTS in items
+            INCREMENT the count for item 1
+        ELSE
+            ADD item to items with count 1
+
+    METHOD remove(item: T)
+        IF item EXISTS in items IF count > 1
+            DECREMENT the count by 1
+        ELSE
+            REMOVE item from items
+
+    METHOD contains(item: T): BOOLEAN
+        RETURN TRUE if item EXISTS in items
+        ELSE RETURN FALSE
+
+    METHOD count(item: ): INTEGER
+        IF item EXISTS in items
+            RETURN count of item
+        ELSE
+            RETURN 0
+
+    METHOD toString(): STRING
+        INITIALIZE empty string result
+        FOR EACH item and count in items
+            SPPEND item and its count to result
+        RETURN result
