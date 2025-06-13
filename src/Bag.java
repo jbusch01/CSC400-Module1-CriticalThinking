@@ -1,4 +1,4 @@
-import java.util.Hashmap;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Bag<T> {
@@ -13,10 +13,10 @@ public class Bag<T> {
         items.put(item, items.getOrDefault(item, 0) + 1);
     }
 
-    // Removes one occurence off the item, if it exists
+    // Removes one occurrence off the item, if it exists
     public void remove(T item) {
         if (items.containsKey(item)) {
-            int count = item.get(item);
+            int count = items.get(item);
             if (count > 1) {
                 items.put(item, count - 1);
             } else {
@@ -27,6 +27,10 @@ public class Bag<T> {
 
     // Checks if the item exists in the bag
     public boolean contains(T item) {
+        return items.containsKey(item);
+    }
+
+    public int count(T item) {
         return items.getOrDefault(item, 0);
     }
 
@@ -34,7 +38,7 @@ public class Bag<T> {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Map.Entry<T, Integer> entry : items.entrySet())  {
-            result.append(entry.getKey()).append("x").append(entry.getValue()).append("\n");
+            result.append(entry.getKey()).append(" x").append(entry.getValue()).append("\n");
         }
         return result.toString();
     }
