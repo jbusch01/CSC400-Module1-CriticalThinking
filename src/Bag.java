@@ -40,7 +40,7 @@ public class Bag<T> {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Map.Entry<T, Integer> entry : items.entrySet())  {
-            result.append(entry.getKey()).append(" x").append(entry.getValue()).append("\n");
+            result.append(entry.getKey()).append(" - ").append(entry.getValue()).append("\n");
         }
         return result.toString();
     }
