@@ -43,6 +43,6 @@ public class BagDemo {
 
         // Test contains and count again
         System.out.println("Contains Potions? " + bag.contains("Potion") + ".");
-        System.out.println("Potions remaining - " + bag.count("Potion") + " potions.\n");
+        System.out.println("Potions remaining - " + bag.count("Potion") + "\n");
         }
 }
